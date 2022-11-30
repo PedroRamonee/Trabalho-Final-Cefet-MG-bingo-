@@ -1,25 +1,25 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//Biblioteca que tr·s a funÁ„o que gera nums aleatÛrios
+//Biblioteca que tr√°s a fun√ß√£o que gera nums aleat√≥rios
 #include <time.h>
 //Pedro Correa & Gabriel Agostinho -- Bingo LALP
 
 
 int main(){
 	
-	srand(time(NULL)); //gerando a semente que gerar· nums randons. 
+	srand(time(NULL)); //gerando a semente que gerar√° nums randons. 
 	fflush(stdin);
 	
-	int jogador1[16], jogador2[16], rec, num[60]; //definindo vetor para cada jogador e para os n˙meros gerados
+	int jogador1[16], jogador2[16], rec, num[60]; //definindo vetor para cada jogador e para os n√∫meros gerados
 	int i, j, k=0, l, m, t, cont=0; //variaveis de controle 
 	int pont1 = 0, pont2 = 0; //variaveis para o score
-	int pode = 1; // Variavel booleana improvisada, vai determinar se È falso ou verdadeiro um loop
+	int pode = 1; // Variavel booleana improvisada, vai determinar se √© falso ou verdadeiro um loop
 	
 	for( i = 0; i < 16 ; i++){ //tabela 1
 		
 		t = rand() % 60;
-		// Caso T seja 0 ele vira 60 autom·ticamente
+		// Caso T seja 0 ele vira 60 autom√°ticamente
 		if( t == 0){
 			t = 60;
 		}
@@ -27,7 +27,7 @@ int main(){
 		jogador1[i] = t;
 		// loop que vai verificar se o num repete
 		for(m = 0; m < i; m++){
-			//caso o num repita ele volta um passo para tr·s
+			//caso o num repita ele volta um passo para tr√°s
 			if(jogador1[m] == t){
 				i--;
 			}
@@ -42,7 +42,7 @@ int main(){
     for( i = 0; i < 16 ; i++){ //tabela 2
 		
 		t = rand() % 60;
-		// Caso T seja 0 ele vira 60 autom·ticamente
+		// Caso T seja 0 ele vira 60 autom√°ticamente
 		if( t == 0){
 			t = 60;
 		}
@@ -63,10 +63,10 @@ int main(){
 	while(pont1 != 16 && pont2 != 16){  
 		
 		pode = 1;
-		/*Loop que n„o deixar· gerarmos dois numeros iguais ou zero;
-		 enquanto a vari·vel "pode" for diferente de 0, ou seja, verdadeira, o loop vai rodar, isso quer dizer que o numero È igual a 0 ou foi repetido;
-		 qando a v·riavel for 0, isto È, falso o loop vai parar e o resto do jogo ser· processado;
-		 com ele sendo falso o numero gerado È completamente novoe diferente de 0.
+		/*Loop que n√£o deixar√° gerarmos dois numeros iguais ou zero;
+		 enquanto a vari√°vel "pode" for diferente de 0, ou seja, verdadeira, o loop vai rodar, isso quer dizer que o numero √© igual a 0 ou foi repetido;
+		 qando a v√°riavel for 0, isto √©, falso o loop vai parar e o resto do jogo ser√° processado;
+		 com ele sendo falso o numero gerado √© completamente novoe diferente de 0.
 		 */
 		while(pode){
 		
@@ -76,7 +76,7 @@ int main(){
 				t = 60;
 			}
 		
-			num[k] = t;								/* Mesmo passo a passo da geraÁ„o das cartelas, em relaÁ„o a repetiÁ„o de numeros e do numero 0*/
+			num[k] = t;				/* Mesmo passo a passo da gera√ß√£o das cartelas, em rela√ß√£o a repeti√ß√£o de numeros e do numero 0*/
 		
 			pode = 0;
 		
@@ -86,7 +86,7 @@ int main(){
 			}
 		}
 	}	
-	// PINGUINS !!!!!!!! (nÛs)
+	// PINGUINS !!!!!!!! (n√≥s)
 printf("            PEDRO                                      GABRIEL                   \n\n\n");
 printf("          ,888888b.                                  ,888888b.                   \n");
 printf("        .d888888888b                               .d888888888b                  \n");
@@ -113,7 +113,7 @@ printf("              _.>,    888888P'                            \\ N    d88888
 printf("            <,--''`.._>8888(                             _.>N    888888P'        \n");
 printf("             `>__...--' `''` SSt                       <,--'N`.._>8888(          \n");
 printf("                                                        `>__N..--' `''` SSt      \n");
-    for ( i = 0; i < 16; i++){ // acumulo de pontuaÁ„o caso o numero seja igual ao da tabela referente ao jogador, (score)
+    for ( i = 0; i < 16; i++){ // acumulo de pontua√ß√£o caso o numero seja igual ao da tabela referente ao jogador, (score)
 			
 			if(num[k] == jogador1[i]){
 				pont1++;
@@ -122,7 +122,7 @@ printf("                                                        `>__N..--' `''` 
 				pont2++;
 			}
 		}
-		// Impress„o da cartela do jogador 1
+		// Impress√£o da cartela do jogador 1
 		printf("Jogador 1: \n");
 		
 		for(i = 0 ; i < 16; i++){
@@ -138,7 +138,7 @@ printf("                                                        `>__N..--' `''` 
 			
 	printf("\n\n");
 	
-	// Impress„o da cartela do jogador 1
+	// Impress√£o da cartela do jogador 1
 	printf("Jogador 2: \n")	;
 		for(i = 0 ; i < 16; i++){
 		
@@ -154,10 +154,10 @@ printf("                                                        `>__N..--' `''` 
 	printf("\n\nForam gerados %d numeros: \n", cont);
 	
 	for(l = 0; l < k; l++){
-		//Impress„o dos numeros gerados
+		//Impress√£o dos numeros gerados
 		printf("%d ", num[l]); 
 	}
-		//condiÁıes de pontuaÁıes iguais, maior que ou  menor que (decis„o do jogo)
+		//condi√ß√µes de pontua√ß√µes iguais, maior que ou  menor que (decis√£o do jogo)
 		if(pont1 == 16 && pont2 == 16){
 		printf("\n\nEMPATE !!!!!!!!!"); 
 	}	
@@ -170,7 +170,7 @@ printf("                                                        `>__N..--' `''` 
 		printf("\n\nJogador 2 VENCEU !!!!!!!");
 	}
 		
-		// IncrementaÁ„o das vari·veis que usamos acima
+		// Incrementa√ß√£o das vari√°veis que usamos acima
 		cont++;	
 		k++;
 		// coisas para quando executar fica bonitinho
